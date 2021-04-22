@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mortage Calculator App</string>
+    <array name="frequency">
+        <item>Monthly</item>
+        <item>Weekly</item>
+        <item>Bi-Weekly</item>
+    </array>
+</resources>
