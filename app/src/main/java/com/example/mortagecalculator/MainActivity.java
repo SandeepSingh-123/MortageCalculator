@@ -57,10 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-                //double numerator = i * Math.pow((1 + i),n);
-                //double denominator = Math.pow((1 + i),n) - 1;
-                
-                
+                //Mortgage Formula              
     
                 // M = P [{r*(1+r)^n}/{(1+r)^n – 1}]
                 total = P * (  (i * Math.pow(1+i, n))
