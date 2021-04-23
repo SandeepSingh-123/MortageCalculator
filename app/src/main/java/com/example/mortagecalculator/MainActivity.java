@@ -42,27 +42,32 @@ public class MainActivity extends AppCompatActivity {
                 switch (spinnerFrequency.getSelectedItemPosition()){
                     case 0:
                         n= n*12;
-                        i = i/12;
+                        i= (i/100)/12;
                         resultLabel = "Monthly Payment";
                         break;
                     case 1:
                         n= n*(12*4);
-                        i = i/(12*4);
+                        i= (i/100)/48;
                         resultLabel = "Weekly Payment";
                         break;
                     case 2:
                         n= n*(12*2);
-                        i = i/(12*2);
+                        i= (i/100)/24;
                         resultLabel = "Bi-Weekly Payment";
                         break;
                 }
 
-                double numerator = i * Math.pow((1 + i),n);
-                double denominator = Math.pow((1 + i),n) - 1;
-                total = (P * numerator / denominator);
-
+                //double numerator = i * Math.pow((1 + i),n);
+                //double denominator = Math.pow((1 + i),n) - 1;
+                
+                
+    
+                // M = P [{r*(1+r)^n}/{(1+r)^n – 1}]
+                total = P * (  (i * Math.pow(1+i, n))
+                        / (Math.pow(1+i, n) - 1) );
+    
                 txtResultLabel.setText(resultLabel);
-                resultValue.setText(Math.ceil(total)+"");
+                resultValue.setText((total)+"");
 
 
             }
